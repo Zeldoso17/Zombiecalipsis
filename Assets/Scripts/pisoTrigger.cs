@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class pisoTrigger : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.CompareTag("PLAYER")){
-            Debug.Log("Entró el personaje");
+        if(other.gameObject.tag == "PLAYER"){
+            Debug.Log("colisionó jejeje");
         }
     }
 }

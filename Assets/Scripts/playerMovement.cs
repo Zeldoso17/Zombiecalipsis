@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    [SerializeField] private float speedMove = 15;
-    [SerializeField] private float jumpSpeed = 20;
-    // Start is called before the first frame update
+    public float speedMove = 15;
+    public float jumpSpeed = 20;
+    public bool enPiso = true;
+    Rigidbody2D rb;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -20,8 +23,16 @@ public class playerMovement : MonoBehaviour
         if(Input.GetKey(KeyCode.A)){
             transform.position += Vector3.left * speedMove * Time.deltaTime;
         }
-        if(Input.GetKey(KeyCode.W)){
-            transform.position += Vector3.up * jumpSpeed * Time.deltaTime;
+        if(Input.GetKey(KeyCode.W) && enPiso){
+            rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
+            enPiso = false;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "FLOOR"){
+            enPiso=true;
         }
     }
 }
