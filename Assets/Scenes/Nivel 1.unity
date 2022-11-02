@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMove: 5
-  jumpSpeed: 20
+  jumpSpeed: 23
   enPiso: 1
 --- !u!61 &19224093
 BoxCollider2D:

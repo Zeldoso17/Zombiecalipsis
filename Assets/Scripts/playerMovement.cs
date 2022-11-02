@@ -24,31 +24,12 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKey(KeyCode.A)){
-            spr.flipX = true;
-            transform.position += Vector3.left * speedMove * Time.deltaTime;
-            anim.SetBool("Walking_Left", true);
-        }else{
-            anim.SetBool("Walking_Left", false);
-        }
-
-        if(Input.GetKey(KeyCode.D)){
-            if(spr.flipX){
-                spr.flipX = false;
-            }
-            transform.position += Vector3.right * speedMove * Time.deltaTime;
-            anim.SetBool("Walking_right", true);
-        } else {
-            anim.SetBool("Walking_right", false);
-        }
-
-        if(Input.GetKey(KeyCode.W) && enPiso){
-            rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
-            enPiso = false;
-        }
-
-        if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.AltGr)){
-            Debug.Log("CORRER MAS RAPIDO");
+        moverDerecha();
+        moverIzquerda();
+        saltar();
+       
+        if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift)){
+            transform.position += Vector3.right * 60 * Time.deltaTime;
         }
     }
 
@@ -62,4 +43,35 @@ public class playerMovement : MonoBehaviour
     {
      Debug.Log("HA SALTADO");
     }
+
+    private void moverIzquerda(){
+        if(Input.GetKey(KeyCode.A)){
+            spr.flipX = true;
+            transform.position += Vector3.left * speedMove * Time.deltaTime;
+            anim.SetBool("Walking_Left", true);
+        }else{
+            anim.SetBool("Walking_Left", false);
+        }
+    }
+
+    private void moverDerecha(){
+        if(Input.GetKey(KeyCode.D)){
+            if(spr.flipX){
+                spr.flipX = false;
+            }
+            transform.position += Vector3.right * speedMove * Time.deltaTime;
+            anim.SetBool("Walking_right", true);
+        } else {
+            anim.SetBool("Walking_right", false);
+        }
+    }
+
+    private void saltar(){
+        if(Input.GetKey(KeyCode.W) && enPiso){
+            rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
+            enPiso = false;
+        }
+    }
+
+
 }
