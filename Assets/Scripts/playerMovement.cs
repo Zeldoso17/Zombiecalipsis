@@ -60,6 +60,7 @@ public class playerMovement : MonoBehaviour
                 spr.flipX = false;
             }
             transform.position += Vector3.right * speedMove * Time.deltaTime;
+            Camera.main.transform.position = transform.position;
             anim.SetBool("Walking_right", true);
         } else {
             anim.SetBool("Walking_right", false);
