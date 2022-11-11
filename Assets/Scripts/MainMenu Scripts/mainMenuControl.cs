@@ -21,7 +21,6 @@ public class mainMenuControl : MonoBehaviour
     private void changeBrightness()
     {
         value = PlayerPrefs.GetFloat("brightness");
-        Debug.Log("Valor: " + value);
         brightnessPanel.color = new Color(brightnessPanel.color.r, brightnessPanel.color.g, brightnessPanel.color.b, value);
     }
 }
