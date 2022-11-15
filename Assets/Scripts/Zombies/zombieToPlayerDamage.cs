@@ -9,10 +9,12 @@ public class zombieToPlayerDamage : MonoBehaviour
     private playerHealthController playerHealthController = new playerHealthController();
     public int damageToPlayer = 5;
     public GameObject player;
-    public Image bloodImage;
+    public Slider Life;
+
     void Start()
     {
-        
+        Life.maxValue = 100;
+        Life.minValue = 0;
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class zombieToPlayerDamage : MonoBehaviour
     {
         if(other.gameObject.tag == "PLAYER"){
             Debug.Log("Holisss");
-            playerHealthController.playerDamage(damageToPlayer, player, bloodImage);
+            playerHealthController.playerDamage(damageToPlayer, player, Life);
         }
     }
 }
