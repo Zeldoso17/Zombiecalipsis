@@ -10,11 +10,13 @@ public class zombieToPlayerDamage : MonoBehaviour
     public int damageToPlayer = 5;
     public GameObject player;
     public Slider Life;
+    private Animator anim;
 
     void Start()
     {
         Life.maxValue = 100;
         Life.minValue = 0;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,8 +27,14 @@ public class zombieToPlayerDamage : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "PLAYER"){
-            Debug.Log("Holisss");
+            anim.SetBool("Beat", true);
             playerHealthController.playerDamage(damageToPlayer, player, Life);
+        }
+    }
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "PLAYER"){
+            anim.SetBool("Beat", false);
         }
     }
 }
