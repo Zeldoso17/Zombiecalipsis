@@ -7,10 +7,12 @@ public class zombieHealthController : MonoBehaviour
 {
     
     private int zombieHealth = 100;
+    private int zombieHealth2 = 0;
+    private Slider zombieLife;
     void Start()
     {
         //zombie = GameObject.FindGameObjectWithTag("ZOMBIE");
-        //zombieLife = GameObject.FindGameObjectWithTag("zombieLife").GetComponent<Slider>();
+        zombieLife = GameObject.FindGameObjectWithTag("zombieLife").GetComponent<Slider>();
 
         //zombieLife.maxValue = 100;
         //zombieLife.minValue = 0;
@@ -29,8 +31,9 @@ public class zombieHealthController : MonoBehaviour
     public void zombieDamage(int zombieDamage){
         Debug.Log("Antes de bajar la vida -> "+zombieHealth);
         zombieHealth = zombieHealth - zombieDamage;
-        Debug.Log("Despues de bajar la vida -> "+zombieHealth);
-        //zombieLife.value = zombieHealth;
+        zombieHealth2 = zombieHealth - zombieDamage;
+        Debug.Log("Despues de bajar la vida -> "+zombieHealth2);
+        zombieLife.value = zombieHealth;
         /*if(zombieLife.value == 0){
             Debug.Log("Zombie Death");
             Destroy(zombie);

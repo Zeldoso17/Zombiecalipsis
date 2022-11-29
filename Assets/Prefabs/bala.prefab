@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4408314717156423806}
   m_Layer: 0
   m_Name: bala
-  m_TagString: Untagged
+  m_TagString: BALA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87be5ff4842344248ab2914f4b9922fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToZombie: 10
+  damageToZombie: 30
