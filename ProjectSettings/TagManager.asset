@@ -4,10 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - BG
-  - FLOOR
   - PLAYER
-  - pisoTrigger
+  - PuntoFinal
+  - FLOOR
+  - zombieLife
+  - ZOMBIE
+  - Options
+  - optionMenu
+  - BALA
+  - Ground
+  - mun
   layers:
   - Default
   - TransparentFX
@@ -42,15 +48,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BG
-    uniqueID: 2548005609
-    locked: 0
-  - name: FLOOR
-    uniqueID: 3902989959
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: PLAYER
-    uniqueID: 1087078669
     locked: 0

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6849062167411025768}
   - component: {fileID: -9012731122545669954}
   - component: {fileID: 7555640756619135226}
-  - component: {fileID: -4408314717156423806}
+  - component: {fileID: -8946859567535901335}
+  - component: {fileID: 6607419766257436430}
   m_Layer: 0
   m_Name: bala
   m_TagString: BALA
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6849062167411025768
 SpriteRenderer:
@@ -134,7 +135,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-4408314717156423806
+--- !u!114 &-8946859567535901335
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +144,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 120894349201650275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87be5ff4842344248ab2914f4b9922fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 93e2164469ceb2f44a8d213d04ef77b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToZombie: 30
+  velocidad: 15
+  damange: 5
+--- !u!114 &6607419766257436430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120894349201650275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6e02cf052791c429a395cee46b9b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoDeVida: 1.5
