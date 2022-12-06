@@ -28,7 +28,7 @@ public class playerShoot : MonoBehaviour
     }
 
     private void Shoot(){
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetButtonDown("Fire1"))
         {
             anim.SetBool("isShooting", true);
             GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
